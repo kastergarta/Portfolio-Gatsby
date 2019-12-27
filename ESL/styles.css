@@ -1,0 +1,38 @@
+.carousel-control-next {
+  filter: invert(100%);
+}
+
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
+#img1 {
+  margin: 0 auto;
+}
+
+#img2 {
+  margin: 0 auto;
+}
+
+#img3 {
+  margin: 0 auto;
+}
+
+.card-group {
+  padding-top: 20px;
+}
+
+.bd-example {
+  padding-top: 20px;
+}
+
+.footer {
+  background-color: #309286;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.social-icon {
+  margin: 10px;
+}

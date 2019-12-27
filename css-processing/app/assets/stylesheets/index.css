@@ -1,0 +1,129 @@
+.transform {
+  background-color: #4E4A4A;
+}
+
+h1 {
+  color: white;
+}
+
+img.grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  -webkit-filter: hue-rotate(40deg);
+  filter: hue-rotate(40deg);
+  -webkit-filter: contrast(1.5);
+  filter: contrast(1.5);
+}
+
+.bg-blend {
+  background-image: url(https://timedotcom.files.wordpress.com/2019/06/hong-kong-protests-4.jpg?quality=85);
+  background-color: grey;
+  background-blend-mode: multiply;
+  filter: hue-rotate(150deg) saturate(4);
+}
+
+.no-bg-blend {
+  background-image: url(https://timedotcom.files.wordpress.com/2019/06/hong-kong-protests-4.jpg?quality=85);
+}
+
+.demo > div {
+  width: 700px;
+  height: 700px;
+  background-size: cover;
+}
+
+.demo {
+  width: 600px;
+  overflow: hidden;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  clear: both;
+  display: table;
+}
+
+/* SELECTIVE COLOR */
+.selective-color-effect {
+  background-image: url(https://timedotcom.files.wordpress.com/2019/06/hong-kong-protests-4.jpg?quality=85);
+  background-size: cover;
+  background-position: center;
+}
+
+@supports (filter: brightness(3)) and (mix-blend-mode: color) {
+  .selective-color-effect {
+    position: relative;
+  }
+  .selective-color-effect:before, .selective-color-effect:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    background-color: green;
+    background-blend-mode: screen;
+    mix-blend-mode: color;
+    filter: brightness(3);
+  }
+}
+
+/* hallucination */
+
+.hallucination-effect {
+  background-image: url(https://www.washingtonpost.com/resizer/Ss8vu16HmrpSj7ZWt58GZJQDJrM=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KOZTMFD3JUI6TJNTGTZ634JVDY.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .hallucination-effect {
+    position: relative;
+    overflow: hidden;
+    background-color: magenta;
+    background-blend-mode: screen;
+  }
+  .hallucination-effect:before, .hallucination-effect:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    mix-blend-mode: multiply;
+    transform: scale(1.05);
+  }
+  .hallucination-effect:before {
+    background-color: yellow;
+    background-blend-mode: screen;
+    transform-origin: top left;
+  }
+  .hallucination-effect:after {
+    background-color: cyan;
+    background-blend-mode: screen;
+    transform-origin: bottom right;
+  }
+}
+
+.no-hallucination-effect {
+  background-image: url(https://www.washingtonpost.com/resizer/Ss8vu16HmrpSj7ZWt58GZJQDJrM=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KOZTMFD3JUI6TJNTGTZ634JVDY.jpg);
+}
+
+/* GIF */
+
+.gif-blended {
+  background-image: url(https://mymodernmet.com/wp/wp-content/uploads/2018/08/child-photo-black-white-photos-winners-2018-1.jpg),
+  url(https://media3.giphy.com/media/3CJYO1ZYC3zos/source.gif);
+  background-blend-mode: multiply;
+}
